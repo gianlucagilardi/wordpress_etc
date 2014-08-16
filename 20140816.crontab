@@ -20,7 +20,7 @@
 # For more information see the manual pages of crontab(5) and cron(8)
 # 
 # m h  dom mon dow   command
-* * * * * /usr/bin/curl --head -sf http://localhost:8080/test.php -o /dev/null || (/usr/sbin/service php5-fpm restart && /usr/sbin/service nginx restart) 2>&1 | /usr/sbin/timestamp.sh >> /var/log/cronjobs.log
-*/8 * * * * /etc/cron.my/mysql_query_flash && echo "Mysql cache cleared" | /usr/sbin/timestamp.sh >> /var/log/cronjobs.log
-*/9 * * * * /etc/init.d/php5-fpm reload 2>&1 | /usr/sbin/timestamp.sh >> /var/log/cronjobs.log
+* * * * * /usr/bin/curl --head -sf http://localhost:8080/test.php -o /dev/null || (/usr/sbin/service php5-fpm restart && /usr/sbin/service nginx restart) 2>&1 | /etc/timestamp.sh >> /var/log/cronjobs.log
+*/8 * * * * /etc/cron.my/mysql_query_flash && echo "Mysql cache cleared" | /etc/timestamp.sh >> /var/log/cronjobs.log
+*/9 * * * * /etc/init.d/php5-fpm reload 2>&1 | /etc/timestamp.sh >> /var/log/cronjobs.log
 
