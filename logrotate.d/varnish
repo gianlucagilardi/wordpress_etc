@@ -1,0 +1,23 @@
+/var/log/varnish/varnish.log {
+  daily
+  rotate 7
+  missingok
+  compress
+  delaycompress
+  missingok
+  postrotate
+    /usr/sbin/invoke-rc.d varnishlog reload > /dev/null
+  endscript
+}
+
+/var/log/varnish/varnishncsa.log {
+  daily
+  rotate 7
+  missingok
+  compress
+  delaycompress
+  missingok
+  postrotate
+    /usr/sbin/invoke-rc.d varnishncsa reload > /dev/null
+  endscript
+}
